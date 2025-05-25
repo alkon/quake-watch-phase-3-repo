@@ -47,7 +47,7 @@ jobs:
       # 5. Authenticate Helm’s OCI client to GHCR
       - name: Log in to GHCR (Helm OCI)
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" \
+          echo "${{ secrets.GHCR_TOKEN }}" \
             | helm registry login ghcr.io \
                 --username "${{ github.actor }}" \
                 --password-stdin
