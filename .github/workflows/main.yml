@@ -46,6 +46,11 @@ jobs:
           sudo mv argocd-linux-amd64 /usr/local/bin/argocd
           argocd version --client
 
+      - name: Verify argocd path and version
+        run: |
+          which argocd
+          argocd version --client
+      
       # 4. Log in to your Argo CD server
       - name: Login to Argo CD
         run: |
