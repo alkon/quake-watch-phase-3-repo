@@ -6,6 +6,14 @@ on:
       - "Publish Image and Chart"
     types:
       - completed
+  workflow_dispatch:
+    inputs:
+      # Optional: You can define inputs that a user can provide when manually triggering.
+      # For example, a reason for the manual run:
+      reason:
+        description: 'Reason for manual trigger'
+        required: false
+        default: 'Manual test from UI'
 
 env:
   ARGOCD_SERVER: ${{ secrets.ARGOCD_SERVER }}
